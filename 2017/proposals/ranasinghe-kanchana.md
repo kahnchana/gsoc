@@ -14,7 +14,7 @@ header-includes:
 ## Abstract
 Categorical information (non-numerical like gender, favorite food, etc.) is quite common in datasets that we analyze. However Matplotlib support for plotting data is available mostly for numerical data, with few direct APIs that can automatically detect categorical data and support it. This project attempts to build an API for plotting heat-maps and other scalarMappables using categorical data. It will also work on developing normalization and color-map APIs supporting categorical data as these will be dependencies for the main API. 
 
-Currently, users wanting to plot categorical data with color support in Matplotlib must manually map their categorical data to numbers, creating non-existent links between classes and requiring a lot of additional effort. The proposed APIs will automatically analyze categorical data and plot heat-maps or provide color-map/norm without no additional user interference being required. 
+Currently, users wanting to plot categorical data with color support in Matplotlib must manually map their categorical data to numbers, creating non-existent links between classes and requiring a lot of additional effort. The proposed APIs will automatically analyze categorical data and plot heat-maps or provide color-map/norm with no additional user interference being required. 
 
 | **Intensity** | **Involves**  | **Mentors** |
 | ------------- | --------------|------------ |
@@ -46,7 +46,7 @@ fig, ax = matplotlib.pyplot.subplots()
 ax.imshow(data)
 ```
 
-Also this categorical support will be extended to support colorbars and legends for the imshow function with regards to categorical data. This will take a similar approach.
+Also this categorical support will be extended to support colorbars and legends for the imshow function with regards to categorical data. These tasks will follow a similar approach.
 
 ## Schedule of Deliverables
 
@@ -64,7 +64,7 @@ This is the starting point for the project. The units framework provides support
 
 ### June 5th - June 9th
 * review/document units support extension
-* tests/bug fixing units support extension
+* tests/bug fixing for units support extension
 
 ### June 12th - June 16th
 * framework outline for norm functionality extensions
@@ -76,7 +76,7 @@ Based on the units support, the next step is normalization support for categoric
 * framework outline for cmap functionality extensions
 * cmap basic functionality including tests and documentation
 
-Currently, the process of using matplotlib.pyplot for heat-maps and other scalarMappables includes the creation of a color-map followed by normalization of all available data to fit this color-map. Color-maps plotting functionality is threefold: sequential, divergent and qualitative. Considering the intrinsic discreteness of categorical data, the extension of the color-maps API will focus on its qualitative plotting ability. However the fundamental behavior of the color-maps API will not require any changes for handling categorical data as our approach simply involves the integration of unit support. Therefore it is possible to build this extended support for categorical data while keeping the public API intact. The same applies to work done on norm API. 
+Currently, the process of using matplotlib.pyplot for heat-maps and other scalarMappables includes the creation of a color-map followed by normalization of all available data to fit this color-map. Color-maps plotting functionality is threefold: sequential, divergent and qualitative. Considering the intrinsic discreteness of categorical data, the extension of the color-maps API will focus on its qualitative plotting ability. However the fundamental behavior of the color-maps API will not require any changes for handling categorical data as our approach simply involves the integration of unit support through changes to underlying objects. Therefore it is possible to build this extended support for categorical data while keeping the public API intact. The same applies to work done on norm API. 
 
 ### June 26 - June 30th, **Begin of Phase 2**
 * finalization of categorical norm and cmap APIs
@@ -127,7 +127,9 @@ Work similar to what is done for heat-maps will be extended to the scalarMappabl
 * discussion of possible future developments on blog 
 
 ## Future works
-* Improving the APIs built by considering different approaches for categorical data integration
+* Analyzing other approaches for categorical data integration to further improve APIs
+* Extension of categorical support for other representations beyond color (markers, point sizes, etc.)
+* Categorical support for other plotting methods
 
 ## Development Experience
 I have been involved in programming work in python, MATLAB, Lua, Java, C and Micro C over the past three years. Some of my work is on [github](https://github.com/kahnchana). 
